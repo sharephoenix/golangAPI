@@ -85,6 +85,18 @@ func (this *usersController) UsersAction(w http.ResponseWriter, r *http.Request)
 	return
 }
 
+// 打开数据库
+func openMySql() {
+	//db := mysql.NewConfig()
+	//db := mysql.New("tcp", "", "192.168.100.166", "root", "test", "webdemo")
+	//if err := db.Connect(); err != nil {
+	//	log.Println(err)
+	//	OutputJson(w, 0, "数据库操作失败", nil)
+	//	return
+	//}
+	//defer db.Close()
+}
+
 func OutputUsersJson(w http.ResponseWriter, ret int, reason string, i interface{}) {
 	out := &ResultData{ret, reason, i}
 	b, err := json.Marshal(out) //json.Marshal(out)
